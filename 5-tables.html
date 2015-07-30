@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tables</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd)	{
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div ng-app=""  ng-init="fruits=[
+    {flavor:'cherry',price: 10},
+    {flavor:'apple',price: 5},
+    {flavor:'banana',price: 15},
+    {flavor:'lemon',price: 7},
+    {flavor:'blueberry',price: 12},
+    {flavor:'orange',price: 8},
+    {flavor:'grape',price: 3}]">
+        <table>
+            <tr>
+                <th>row</th>
+                <th>flavor</th>
+                <th>price</th>
+            </tr>
+            <tr ng-repeat="x in fruits" >
+                <td>{{ $index + 1 }}</td>   <!-- $index is set to the item index or key. -->
+                <td>{{ x.flavor }}</td>
+                <td>{{ x.price }}</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
